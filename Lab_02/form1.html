@@ -17,18 +17,21 @@
   </head>
   <body>
     <section>
-      <label for="name" style="font-weight: 700; font-size: 26px">Name</label>
-      <br /><br />
-      <input id="name" type="text" />
-      <br /><br />
-      <button id="btn" type="submit">Submit</button>
-      <p id="msg"></p>
+      <form action="">
+        <label for="name" style="font-weight: 700; font-size: 26px">Name</label>
+        <br /><br />
+        <input id="name" type="text" />
+        <br /><br />
+        <button id="btn" type="submit">Submit</button>
+        <p id="msg"></p>
+      </form>
     </section>
     <script>
       const msg = document.getElementById("msg");
       const btn = document.getElementById("btn");
 
-      btn.addEventListener("click", function () {
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
         const name = document.getElementById("name").value.trim();
 
         const validated = (name) => {
@@ -65,8 +68,9 @@
             }
             if (isValidCharacter(char) === false) {
               return {
-                flag : false,
-                errorText : "Name only contains letters, dots (.), and dashes (-)",
+                flag: false,
+                errorText:
+                  "Name only contains letters, dots (.), and dashes (-)",
               };
             }
           }
@@ -99,19 +103,21 @@
         }
       }
 
-      function isValidCharacter(char){
-
+      function isValidCharacter(char) {
         const asciCode = char.charCodeAt(0);
 
-        if ((asciCode >= 65 && asciCode <= 90) || (asciCode >= 97 && asciCode <= 122)) {
+        if (
+          (asciCode >= 65 && asciCode <= 90) ||
+          (asciCode >= 97 && asciCode <= 122)
+        ) {
           return true;
         }
 
-        if (char === '.') {
+        if (char === ".") {
           return true;
         }
 
-        if (char === '-') {
+        if (char === "-") {
           return true;
         }
 
