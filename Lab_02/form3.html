@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 3</title>
+    <style>
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+      .success {
+        color: green;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <section style="padding-left: 40px; padding-top: 30px;">
+      <form id="genderForm" action="">
+        <fieldset style="width: fit-content;">
+          <legend style="font-size: large; font-weight: 600;">Gender</legend>
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+          <input type="radio" id="others" name="gender" value="others"/>
+          <label for="others">Others</label>
+        </fieldset>
+        <br /><br />
+        <input type="submit" value="Submit">
+      </form>
+      <p id="message"></p>
+    </section>
+
+    <script>
+      const form = document.getElementById('genderForm');
+      const message = document.getElementById('message');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        const genders = document.getElementsByName('gender');
+        let isSelected = false;
+        
+        for (let i = 0; i < genders.length; i++) {
+          if (genders[i].checked) {
+            isSelected = true;
+            break;
+          }
+        }
+        
+        if (isSelected) {
+          message.className = 'success';
+          message.textContent = 'Gender selected successfully!';
+        } else {
+          message.className = 'error';
+          message.textContent = 'Please select a gender option';
+        }
+      });
+    </script>
+  </body>
+</html>
