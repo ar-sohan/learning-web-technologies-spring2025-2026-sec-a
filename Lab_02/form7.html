@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form 7</title>
     <style>
-      .failed {
+       .failed {
         color: red;
-        font-size: 14px;
-        margin-top: 25px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
       .successful {
         color: green;
-        font-size: 14px;
-        margin-top: 25px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
     </style>
   </head>
@@ -33,82 +35,11 @@
           <br>
           <hr>
           <br/>
-          <input type="submit" value="Submit" />
+          <button type="submit" id="btn">Submit</button>
         </fieldset>
       </form>
-      <p id="msg"></p>
+      <p id="msg7"></p>
     </section>
-
-    <script>
-      const form = document.getElementById('profileForm');
-      const msg = document.getElementById('msg');
-      const userIdContainer = document.getElementById('userId');
-      const pictureContainer = document.getElementById('picture');
-
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        
-        const userId = userIdContainer.value.trim();
-        const picture = pictureContainer.files[0];
-        
-        const validationResult = validateProfile(userId, picture);
-        
-        if (validationResult.flag) {
-          msg.className = 'successful';
-          msg.textContent = 'Profile information is valid!';
-        } else {
-          msg.className = 'failed';
-          msg.textContent = validationResult.errorText;
-        }
-      });
-
-      function validateProfile(userId, pictureFile) {
-        if (userId.length === 0) {
-          return {
-            flag: false,
-            errorText: 'User ID cannot be empty',
-          };
-        }
-        
-        if (isNaN(userId)) {
-          return {
-            flag: false,
-            errorText: 'User ID must be a number',
-          };
-        }
-        
-        //checking if it's positive
-        const userIdNum = Number(userId);
-        if (userIdNum <= 0) {
-          return {
-            flag: false,
-            errorText: 'User ID must be a positive number',
-          };
-        }
-        
-        // Picture cannot be empty
-        if (!pictureFile) {
-          return {
-            flag: false,
-            errorText: 'Please select a profile picture',
-          };
-        }
-        
-        //adding file type validation
-        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
-        if (!allowedTypes.includes(pictureFile.type)) {
-          return {
-            flag: false,
-            errorText: 'Please select a valid image file (e.x : JPEG, PNG, or GIF)',
-          };
-        }
-        
-        return {
-          flag: true,
-          errorText: null,
-        };
-      }
-    </script>
+    <script src="form7.js"></script>
   </body>
 </html>

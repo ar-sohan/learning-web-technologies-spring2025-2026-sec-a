@@ -7,13 +7,15 @@
     <style>
       .failed {
         color: red;
-        font-size: 14px;
-        margin-top: 5px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
       .successful {
         color: green;
-        font-size: 14px;
-        margin-top: 5px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
     </style>
   </head>
@@ -30,37 +32,11 @@
           <label for="bsc">BSc</label>
         </fieldset>
         <br /><br />
-        <input type="submit" value="Submit">
+        <button id="btn" type="submit">Submit</button>
       </form>
-      <p id="message"></p>
+      <p id="msg5"></p>
     </section>
 
-    <script>
-      const form = document.getElementById('degreeForm');
-      const message = document.getElementById('message');
-
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const degreeCheckboxes = document.getElementsByName('degree');
-        let isSelected = false;
-        let selectedDegrees = [];
-        
-        for (let i = 0; i < degreeCheckboxes.length; i++) {
-          if (degreeCheckboxes[i].checked) {
-            isSelected = true;
-            selectedDegrees.push(degreeCheckboxes[i].value);
-          }
-        }
-        
-        if (isSelected) {
-          message.className = 'successful';
-          message.textContent = `Selected: ${selectedDegrees.join(', ').toUpperCase()}`;
-        } else {
-          message.className = 'failed';
-          message.textContent = 'Please select at least one degree';
-        }
-      });
-    </script>
+    <script src="form5.js"></script>
   </body>
 </html>

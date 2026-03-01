@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form 3</title>
     <style>
-      .error {
+      .failed {
         color: red;
-        font-size: 14px;
-        margin-top: 20px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
-      .success {
+      .successful {
         color: green;
-        font-size: 14px;
-        margin-top: 20px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
     </style>
   </head>
@@ -30,36 +32,11 @@
           <label for="others">Others</label>
         </fieldset>
         <br /><br />
-        <input type="submit" value="Submit">
+        <button id="btn" type="submit">Submit</button>
       </form>
-      <p id="message"></p>
+      <p id="msg3"></p>
     </section>
 
-    <script>
-      const form = document.getElementById('genderForm');
-      const message = document.getElementById('message');
-
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
-    
-        const genders = document.getElementsByName('gender');
-        let isSelected = false;
-        
-        for (let i = 0; i < genders.length; i++) {
-          if (genders[i].checked) {
-            isSelected = true;
-            break;
-          }
-        }
-        
-        if (isSelected) {
-          message.className = 'success';
-          message.textContent = 'Gender selected successfully!';
-        } else {
-          message.className = 'error';
-          message.textContent = 'Please select a gender option';
-        }
-      });
-    </script>
+    <script src="form3.js"></script>
   </body>
 </html>

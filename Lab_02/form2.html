@@ -7,11 +7,15 @@
     <style>
       .failed {
         color: red;
-        font-size: 14px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
       .successful {
         color: green;
-        font-size: 14px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
     </style>
   </head>
@@ -27,99 +31,8 @@
         <br />
         <button id="btn" type="submit">Submit</button>
       </form>
-      <p id="msg"></p>
+      <p id="msg2"></p>
     </section>
-
-    <script>
-      const form = document.querySelector("form");
-      const msg = document.getElementById("msg");
-
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const email = document.getElementById("email").value.trim();
-
-        const validationResult = validateEmail(email);
-
-        if (validationResult.flag) {
-          msg.className = "successful";
-          msg.textContent = "Email is valid!";
-        } else {
-          msg.className = "failed";
-          msg.textContent = validationResult.errorText;
-        }
-      });
-
-      function validateEmail(email) {
-        if (email.length === 0) {
-          return {
-            flag: false,
-            errorText: "Email cannot be empty",
-          };
-        }
-
-        if (!email.includes("@")) {
-          return {
-            flag: false,
-            errorText: "Email must contain @ symbol",
-          };
-        }
-
-        const parts = email.split("@");
-
-        if (parts.length !== 2) {
-          return {
-            flag: false,
-            errorText: "Email must contain exactly one @ symbol",
-          };
-        }
-
-        const localPart = parts[0];
-        const domainPart = parts[1];
-
-        if (localPart.length === 0) {
-          return {
-            flag: false,
-            errorText: "Email must have text before @",
-          };
-        }
-
-        if (domainPart.length === 0) {
-          return {
-            flag: false,
-            errorText: "Email must have text after @",
-          };
-        }
-
-        if (!domainPart.includes(".")) {
-          return {
-            flag: false,
-            errorText: "Domain must contain a dot",
-          };
-        }
-
-        if (domainPart.startsWith(".") || domainPart.endsWith(".")) {
-          return {
-            flag: false,
-            errorText: "Domain cannot start or end with a dot",
-          };
-        }
-
-        const domainParts = domainPart.split(".");
-        for (let i = 0; i < domainParts.length; i++) {
-          if (domainParts[i].length === 0) {
-            return {
-              flag: false,
-              errorText: "Invalid domain format",
-            };
-          }
-        }
-
-        return {
-          flag: true,
-          errorText: null,
-        };
-      }
-    </script>
+    <script src="form2.js"></script>
   </body>
 </html>

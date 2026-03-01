@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form 6</title>
     <style>
-      .failed {
+        .failed {
         color: red;
-        font-size: 16px;
-        margin-top: 25px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
       .successful {
         color: green;
-        font-size: 16px;
-        margin-top: 25px;
+        font-size: 20px;
+        padding-bottom: 25px;
+        padding-left: 40px;
       }
     </style>
   </head>
@@ -39,31 +41,11 @@
         <br/>
         <hr width="20%" align="left">
         <br/>
-        <input type="submit" value="Submit" />
+        <button id="btn" type="submit">Submit</button>
       </form>
-      <p id="msg"></p>
+      <p id="msg6"></p>
     </section>
 
-    <script>
-      const form = document.getElementById('bloodGroupForm');
-      const msg = document.getElementById('msg');
-      const bloodGroupSelect = document.getElementById('bloodGroup');
-
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const selectedValue = bloodGroupSelect.value;
-
-        if (selectedValue) {
-          const idx = bloodGroupSelect.selectedIndex;
-          const selectedText = bloodGroupSelect[idx].text;
-          msg.className = 'successful';
-          msg.textContent = `Selected blood group: ${selectedText}`;
-        } else {
-          msg.className = 'failed';
-          msg.textContent = 'Please select a blood group';
-        }
-      });
-    </script>
+    <script src="form6.js"></script>
   </body>
 </html>
