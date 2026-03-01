@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 8</title>
+    <style>
+        .tableBody{
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <section style="padding-left: 40px; padding-top: 30px">
+      <table border="1">
+        <tr align="center">
+          <th class="tableBody" colspan="3" style="font-size: larger; font-weight: 700">
+            Personal Profile
+          </th>
+        </tr>
+        <tr>
+          <td class="tableBody">Name</td>
+          <td class="tableBody"><input type="text" /></td>
+          <td class="tableBody"></td>
+        </tr>
+        <tr>
+          <td class="tableBody">Email</td>
+          <td class="tableBody"><input type="email" /></td>
+          <td class="tableBody"></td>
+        </tr>
+        <tr>
+          <td class="tableBody">Gender</td>
+          <td class="tableBody">
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+            <input type="radio" id="others" name="gender" value="others" />
+            <label for="others">Others</label>
+          </td>
+          <td class="tableBody"></td>
+        </tr>
+        <tr>
+          <td class="tableBody">Date of Birth</td>
+          <td class="tableBody">
+            <input type="text" />
+            <span>/</span>
+            <input type="text" />
+            <span>/</span>
+            <input type="text" />
+            <span> (dd/mm/yyyy) </span>
+          </td>
+          <td class="tableBody"></td>
+        </tr>
+        <tr>
+          <td class="tableBody">Blood Group</td>
+          <td class="tableBody">
+            <select name="bloodGroup" id="bloodGroup">
+              <option value="a+">A+</option>
+              <option value="a-">A-</option>
+              <option value="b+">B+</option>
+              <option value="b-">B-</option>
+              <option value="ab-">AB-</option>
+              <option value="ab+">AB+</option>
+              <option value="o+">O+</option>
+              <option value="o-">O-</option>
+            </select>
+          </td>
+          <td class="tableBody"></td>
+        </tr>
+        <tr>
+          <td class="tableBody">Degree</td>
+          <td class="tableBody">
+            <input type="checkbox" id="ssc" name="degree" value="ssc" />
+            <label for="ssc">SSC</label>
+            <input type="checkbox" id="hsc" name="degree" value="hsc" />
+            <label for="hsc">HSC</label>
+            <input type="checkbox" id="bsc" name="degree" value="bsc" />
+            <label for="bsc">BSc.</label>
+            <input type="checkbox" id="msc" name="degree" value="msc" />
+            <label for="msc">MSc.</label>
+          </td>
+          <td class="tableBody"></td>
+        </tr>
+        <tr>
+          <td class="tableBody">Photo</td>
+          <td class="tableBody">
+            <input type="file" name="picture" id="picture">
+          </td>
+          <td class="tableBody"></td>
+        </tr>
+        <tr>
+          <td class="tableBody" colspan="3" style="height: 20px;"></td>
+        </tr>
+        <tr>
+          <td class="tableBody" colspan="3" align="right">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+          </td>
+        </tr>
+      </table>
+    </section>
+    <script src="form8.js"></script>
+  </body>
+</html>

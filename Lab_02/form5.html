@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 5</title>
+    <style>
+      .failed {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .successful {
+        color: green;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <section style="padding-left: 40px; padding-top: 30px;">
+      <form id="degreeForm" action="">
+        <fieldset style="width: fit-content;">
+          <legend style="font-size: large; font-weight: 600;">Degree</legend>
+          <input type="checkbox" id="ssc" name="degree" value="ssc" />
+          <label for="ssc">SSC</label>
+          <input type="checkbox" id="hsc" name="degree" value="hsc" />
+          <label for="hsc">HSC</label>
+          <input type="checkbox" id="bsc" name="degree" value="bsc"/>
+          <label for="bsc">BSc</label>
+        </fieldset>
+        <br /><br />
+        <input type="submit" value="Submit">
+      </form>
+      <p id="message"></p>
+    </section>
+
+    <script>
+      const form = document.getElementById('degreeForm');
+      const message = document.getElementById('message');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const degreeCheckboxes = document.getElementsByName('degree');
+        let isSelected = false;
+        let selectedDegrees = [];
+        
+        for (let i = 0; i < degreeCheckboxes.length; i++) {
+          if (degreeCheckboxes[i].checked) {
+            isSelected = true;
+            selectedDegrees.push(degreeCheckboxes[i].value);
+          }
+        }
+        
+        if (isSelected) {
+          message.className = 'successful';
+          message.textContent = `Selected: ${selectedDegrees.join(', ').toUpperCase()}`;
+        } else {
+          message.className = 'failed';
+          message.textContent = 'Please select at least one degree';
+        }
+      });
+    </script>
+  </body>
+</html>
