@@ -17,48 +17,35 @@
         padding-bottom: 25px;
         padding-left: 40px;
       }
-      .error-input {
-        border: 1px solid red;
-      }
-      .error-select {
-        border: 1px solid red;
-      }
-      .error-file {
-        border: 1px solid red;
-        padding: 2px;
-      }
-      .validation-summary {
-        margin-top: 20px;
-        padding: 10px;
-        border-radius: 5px;
+      #message {
+        margin-left: 40px;
+        margin-top: 10px;
+        font-size: 20px;
       }
     </style>
   </head>
   <body>
     <section style="padding-left: 40px; padding-top: 30px">
-      <form id="profileForm" action="">
+      <form id="profileForm">
         <table border="1">
           <tr align="center">
-            <th
-              colspan="3"
-              style="font-size: larger; font-weight: 700; padding: 10px"
-            >
+            <th colspan="3" style="font-size: larger; font-weight: 700; padding: 10px;">
               Personal Profile
             </th>
           </tr>
           <tr>
-            <td style="padding: 10px">Name</td>
-            <td style="padding: 10px"><input type="text" id="name" /></td>
-            <td style="padding: 10px" id="msg1"></td>
+            <td style="padding: 10px;">Name</td>
+            <td style="padding: 10px;"><input id="name" type="text" /></td>
+            <td id="msg1" style="padding: 10px; color: red;"></td>
           </tr>
           <tr>
-            <td style="padding: 10px">Email</td>
-            <td style="padding: 10px"><input type="email" id="email" /></td>
-            <td style="padding: 10px" id="msg2"></td>
+            <td style="padding: 10px;">Email</td>
+            <td style="padding: 10px;"><input id="email" type="email" /></td>
+            <td id="msg2" style="padding: 10px; color: red;"></td>
           </tr>
           <tr>
-            <td style="padding: 10px">Gender</td>
-            <td style="padding: 10px">
+            <td style="padding: 10px;">Gender</td>
+            <td style="padding: 10px;">
               <input type="radio" id="male" name="gender" value="male" />
               <label for="male">Male</label>
               <input type="radio" id="female" name="gender" value="female" />
@@ -66,27 +53,25 @@
               <input type="radio" id="others" name="gender" value="others" />
               <label for="others">Others</label>
             </td>
-            <td style="padding: 10px" id="msg3"></td>
+            <td id="msg3" style="padding: 10px; color: red;"></td>
           </tr>
           <tr>
-            <td style="padding: 10px">Date of Birth</td>
-            <td style="padding: 10px">
-              <input type="text" id="day" style="width: 40px" />
+            <td style="padding: 10px;">Date of Birth</td>
+            <td style="padding: 10px;">
+              <input type="text" id="day" size="3"/>
               <span>/</span>
-              <input type="text" id="month" style="width: 40px" />
+              <input type="text" id="month" size="3"/>
               <span>/</span>
-              <input type="text" id="year" style="width: 50px" />
+              <input type="text" id="year" size="4"/>
               <span> (dd/mm/yyyy) </span>
             </td>
-            <td style="padding: 10px" id="msg4"></td>
+            <td id="msg4" style="padding: 10px; color: red;"></td>
           </tr>
           <tr>
-            <td style="padding: 10px">Blood Group</td>
-            <td style="padding: 10px">
+            <td style="padding: 10px;">Blood Group</td>
+            <td style="padding: 10px;">
               <select name="bloodGroup" id="bloodGroup">
-                <option value="" disabled selected>
-                  -- Select Blood Group --
-                </option>
+                <option value=""> -Select Blood Group- </option>
                 <option value="a+">A+</option>
                 <option value="a-">A-</option>
                 <option value="b+">B+</option>
@@ -97,43 +82,37 @@
                 <option value="o-">O-</option>
               </select>
             </td>
-            <td style="padding: 10px" id="msg5"></td>
+            <td id="msg5" style="padding: 10px; color: red;"></td>
           </tr>
           <tr>
-            <td style="padding: 10px">Degree</td>
-            <td style="padding: 10px">
+            <td style="padding: 10px;">Degree</td>
+            <td style="padding: 10px;">
               <input type="checkbox" id="ssc" name="degree" value="ssc" />
               <label for="ssc">SSC</label>
               <input type="checkbox" id="hsc" name="degree" value="hsc" />
               <label for="hsc">HSC</label>
               <input type="checkbox" id="bsc" name="degree" value="bsc" />
               <label for="bsc">BSc.</label>
-              <input type="checkbox" id="msc" name="degree" value="msc" />
-              <label for="msc">MSc.</label>
             </td>
-            <td style="padding: 10px" id="msg6"></td>
+            <td id="msg6" style="padding: 10px; color: red;"></td>
           </tr>
           <tr>
-            <td style="padding: 10px">Photo</td>
-            <td style="padding: 10px">
-              <input type="file" name="picture" id="picture" />
+            <td style="padding: 10px;">Photo</td>
+            <td style="padding: 10px;">
+              <input type="file" name="picture" id="picture" accept="image/*">
             </td>
-            <td style="padding: 10px" id="msg7"></td>
+            <td id="msg7" style="padding: 10px; color: red;"></td>
           </tr>
           <tr>
-            <td style="padding: 10px" colspan="3" style="height: 20px"></td>
-          </tr>
-          <tr>
-            <td style="padding: 10px" colspan="3" align="right">
-              <input type="submit" value="Submit" />
-              <input type="reset" value="Reset" id="resetBtn" />
+            <td style="padding: 10px;" colspan="3" align="right">
+              <input id="submitBtn" type="submit" value="Submit">
+              <input id="resetBtn" type="button" value="Reset">
             </td>
           </tr>
         </table>
       </form>
-      <div id="message" class="validation-summary"></div>
+      <div id="message"></div>
     </section>
-
     <script src="form8.js"></script>
   </body>
 </html>
