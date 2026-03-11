@@ -23,7 +23,7 @@ h1{
     width: 100px;
     height: 100px;
     background: white;
-    border: 2px solid #333;
+    border: 2px solid gray;
     font-size: 40px;
     font-weight: bold;
     display: flex;
@@ -32,7 +32,7 @@ h1{
 }
 
 .win{
-    background: #90ee90;
+    background: lightgreen;
 }
 
 #btnReset{
