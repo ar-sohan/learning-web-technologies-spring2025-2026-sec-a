@@ -10,11 +10,19 @@
 }
 
 .product_container{
+    padding-left: 100px;
+    padding-top: 50px;
     width: 100%;
     display: flex;
     gap: 20px;
 }
 
+.product{
+    padding: 5px;
+    background-color: bisque;
+    border-radius: 20px;
+    text-align: center;
+}
 .price_cal{
     width: 50%;
 }

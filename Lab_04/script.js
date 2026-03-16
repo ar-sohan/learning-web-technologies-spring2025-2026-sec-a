@@ -27,11 +27,14 @@ btn.addEventListener("click", function () {
     
     let totalPrice = selectedProduct.price * quantity;
     document.getElementById("totalPrice").innerHTML = totalPrice + "$";
-    console.log(selectedProduct);
-    console.log(productIdInput.price, productIdInput.quantity);
+    if(totalPrice > 1000)
+    {
+        alert("You are eligible for a gift coupon.")
+    }
   }
   else
   {
     alert("Out Of stock. Please select a valid quantity.");
+    document.getElementById("quantity").value = "";
   }
 });
