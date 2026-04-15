@@ -15,7 +15,7 @@
     <form method="post">
         <fieldset>
             <legend>Username : </legend>
-            <input type="text" name="uname" value="<?php if(isset($name)){ echo "$name"; } ?>"> 
+            <input type="text" name="uname" value="<?php if(isset($_POST['uname'])){ echo "$name"; } ?>"> 
             <br>
             <hr>
             <input type="submit" name="submit" value="Submit">

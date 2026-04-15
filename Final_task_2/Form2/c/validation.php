@@ -15,7 +15,7 @@
     <form action="" method="post">
         <fieldset>
             <legend>Email : </legend>
-            <input type="email" name="email" value="<?php if(isset($email)){ echo "$email";} ?>"> <br>
+            <input type="email" name="email" value="<?php if(isset($_POST['email'])){ echo "$email";} ?>"> <br>
             <hr>
             <input type="submit" name="submit" value="Submit">
         </fieldset>
