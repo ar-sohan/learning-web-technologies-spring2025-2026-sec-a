@@ -15,16 +15,10 @@
     <main style = "border: 2px solid black; padding:20px;">
         <form>
             <fieldset>
-                <legend>LOGIN</legend>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username"> <br><br>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-                <br><br>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Remember Me</label> <br>
+                <legend>Forget Password</legend>
+                <label for="email">Enter your Email : </label>
+                <input type="email" name="email" id="email"> <br>
                 <button type="submit">Submit</button>
-                <a href="forgetPass.php">Forget Password</a>
             </fieldset>
         </form>
     </main>
