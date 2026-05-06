@@ -1,3 +1,13 @@
+<?php
+
+    session_start();
+    print_r($_SESSION);
+
+?>
+
+<html>
+    <head></head>
+<body>
 <header>
         <div style="display: flex; justify-content: space-between;border: 2px solid black; padding:20px">
             <div>
@@ -31,3 +41,5 @@
     <footer style = "border: 2px solid black; padding:20px">
         <p style="text-align : center;">copyright @2026</p>
     </footer>
+</body>
+</html>

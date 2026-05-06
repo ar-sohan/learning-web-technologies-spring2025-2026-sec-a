@@ -1,3 +1,11 @@
+
+<?php
+    session_start();
+    if(!isset($_COOKIE['status'])){
+        header('location: login.php');
+    }
+?>
+
 <html>
 <head>
     <title> Unknown Company </title>
